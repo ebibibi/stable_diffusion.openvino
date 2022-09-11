@@ -16,4 +16,5 @@ COPY data/ /src/data/
 # download models
 RUN python3 demo.py --num-inference-steps 1 --prompt "test" --output /tmp/test.jpg
 
-ENTRYPOINT ["python3", "demo.py"]
+#ENTRYPOINT ["python3", "demo.py"]
+ENTRYPOINT ["streamlit", "run", "demo_web.py"]
