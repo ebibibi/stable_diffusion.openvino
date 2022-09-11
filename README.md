@@ -19,3 +19,10 @@ docker run --rm -p 8501:8501 stable_diffusion.openvino:latest
 
 その後、ブラウザを使って http://localhost:8501 にアクセスすれば利用可能です。
 もちろん同一ネットワーク上のほかのホストから http://IPアドレス:8501 or http://ホスト名:8501 等でもアクセス可能です。
+
+画像を大量に生成したい場合にはcreateimages.pyを実行すると捗ります。
+
+```
+sudo docker run -it -v $(pwd)/output:/tmp/output stable_diffusion.openvino:latest /bin/bash
+python3 createimages.py "(ここにpromptを書く)"
+```
